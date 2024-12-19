@@ -14,7 +14,7 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route
+        <Route index
           path="/registration"
           element={
             <PublicRoute redirectTo="/dictionary" restricted>
