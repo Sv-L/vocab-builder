@@ -3,6 +3,8 @@ import PublicRoute from "../Routes/PublicRoute";
 import PrivateRoute from "../Routes/PrivateRoute";
 import Layout from "./Layout";
 import { lazy } from "react";
+import { useSelector } from "react-redux";
+import { geIsLoggedIn } from "../redux/auth/authSelectors";
 
 const RegistrationPage = lazy(() => import("../pages/RegistrationPage"));
 const LoginPage = lazy(() => import("../pages/LoginPage"));
@@ -11,10 +13,17 @@ const RecommendPage = lazy(() => import("../pages/RecommendPage"));
 const TrainingPage = lazy(() => import("../pages/TrainingPage"));
 
 const App = () => {
+
+  const isLoggedIn = useSelector(geIsLoggedIn);
+
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index
+         <Route
+          index
+          element={isLoggedIn ? <Navigate to="/dictionary" /> : <Navigate to="/registration" />}
+        />
+        <Route
           path="/registration"
           element={
             <PublicRoute redirectTo="/dictionary" restricted>
