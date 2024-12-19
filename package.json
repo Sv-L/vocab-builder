@@ -7,7 +7,6 @@
     "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.9",
     "cra-template": "1.2.0",
-    "lodash": "^4.17.21",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-hook-form": "^7.54.1",
@@ -15,18 +14,17 @@
     "react-router-dom": "^7.0.2",
     "react-scripts": "^5.0.1",
     "react-spinners": "^0.15.0",
-    "react-toastify": "^11.0.0",
-    "redux": "^5.0.1",
+    "react-toastify": "^11.0.2",
     "styled-components": "^6.1.13",
     "web-vitals": "^4.2.4",
-    "yup": "^1.6.0"
+    "yup": "^1.6.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint:js": "eslint ."
+    "lint:js": "eslint src/**/*.{js,jsx}"
   },
   "eslintConfig": {
     "extends": [
