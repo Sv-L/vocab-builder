@@ -2,6 +2,7 @@
   "name": "vocab-builder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://sv-l.github.io/vocab-builder/",
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@reduxjs/toolkit": "^2.5.0",
