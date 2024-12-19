@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkvocab_builder=self.webpackChunkvocab_builder||[]).push([[894],{894:(e,c,s)=>{s.r(c),s.d(c,{default:()=>l});var a=s(710),d=s(579);const l=()=>(0,d.jsx)(a.A,{children:(0,d.jsx)("p",{children:"RecommendPage"})})}}]);
+//# sourceMappingURL=894.21d5427f.chunk.js.map
