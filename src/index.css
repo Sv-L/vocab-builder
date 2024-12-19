@@ -1,0 +1,40 @@
+@font-face {
+  font-family: "MacPawFixelDisplay";
+  src: url("/src/fonts/fonts/MacPawFixelDisplay-Bold.otf") format("otf"),
+    url("/src/fonts/fonts/MacPawFixelDisplay-ExtraBold.otf") format("otf"),
+    url("/src/fonts/fonts/MacPawFixelDisplay-Light.otf") format("otf"),
+    url("/src/fonts/fonts/MacPawFixelDisplay-Medium.otf") format("otf"),
+    url("/src/fonts/fonts/MacPawFixelDisplay-Regular.otf") format("otf"),
+    url("/src/fonts/fonts/MacPawFixelDisplay-SemiBold.otf") format("otf"),
+    url("/src/fonts/fonts/MacPawFixelDisplay-Thin.otf") format("otf");
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+span {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
