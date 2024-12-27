@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getError } from "../../redux/auth/authSelectors";
 import { validationSchema } from "./validationSchema";
 import { signUpAPI, signInAPI } from "../../API/authAPI";
+import {AuthFormStyles} from "./AuthFormStyles";
 
 const AuthForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -32,7 +33,7 @@ const AuthForm = () => {
   };
 
   return (
-    <>
+    <AuthFormStyles>
       <form onSubmit={handleSubmit(onSubmit)}>
         {isRegistrationPage && (
           <input id="name" placeholder="Name" {...register("name")}></input>
@@ -60,7 +61,7 @@ const AuthForm = () => {
       <Link to={isRegistrationPage ? "/login" : "/registration"}>
         {isRegistrationPage ? "Login" : "Register"}
       </Link>
-    </>
+    </AuthFormStyles>
   );
 };
 

@@ -1,68 +1,51 @@
-import { useDispatch, useSelector } from "react-redux";
-import Container from "../Conteiner";
-import Icon from "../Icon";
-import { LogoStyles } from "./HeaderStyles";
-import { geIsLoggedIn, getName } from "../../redux/auth/authSelectors";
-import { logOutAPI } from "../../API/authAPI";
-import { useEffect, useState } from "react";
-import { debounce } from "lodash";
-import { NavLink } from "react-router-dom";
+import { useSelector } from 'react-redux';
+import Container from '../Conteiner';
+import { geIsLoggedIn } from '../../redux/auth/authSelectors';
+import { useEffect, useState } from 'react';
+import { debounce } from 'lodash';
+import UserNav from './UserNav';
+import UserBar from './UserBar/UserBar';
+import Logo from './Logo';
+import MobileMenu from './MobileMenu';
+import LogOut from './LogOut';
+import { HeaderStyles, HeaderStylesMob } from './HeaderStyles';
 
 const Header = () => {
-  const isLoggedIn = useSelector(geIsLoggedIn);
-  const userName = useSelector(getName);
-  const dispatch = useDispatch();
-
   const [width, setWidth] = useState(window.innerWidth);
-
+  const isMobile = width <= 768;
+  const isLoggedIn = useSelector(geIsLoggedIn);
   const handleWindowSizeChange = debounce(() => {
     setWidth(window.innerWidth);
-  }, 2000);
+  }, 1000);
 
   useEffect(() => {
-    window.addEventListener("resize", handleWindowSizeChange);
+    window.addEventListener('resize', handleWindowSizeChange);
     return () => {
-      window.removeEventListener("resize", handleWindowSizeChange);
+      window.removeEventListener('resize', handleWindowSizeChange);
     };
   }, [handleWindowSizeChange]);
 
-  const isMobile = width <= 768;
-
-  const onlogOut = async (data) => {
-    dispatch(logOutAPI());
-  };
-
   return (
     <Container>
-      <LogoStyles>
-        <Icon name="logo" size="36" />
-        <p>VocabBuilder</p>
-      </LogoStyles>
-
-      {isLoggedIn && (
-        <>
-          <p>{userName}</p>
-          <Icon name="user" stroke="#000000" size="24" />
-          <button onClick={onlogOut}>LogOut</button>
-          {isMobile ? (
-            <button>
-              <Icon name="burger" stroke="#000000" size="24" />
-            </button>
-          ) : (
-            <ul>
-              <li>
-                <NavLink to={"/dictionary"}>Dictionary</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/recommend"}>Recommend</NavLink>
-              </li>
-              <li>
-                <NavLink to={"/training"}>Training</NavLink>
-              </li>
-            </ul>
-          )}
-        </>
-      )}
+      <HeaderStyles>
+        <Logo />
+        {isLoggedIn && (
+          <>
+            {isMobile ? (
+              <HeaderStylesMob>
+                <UserBar />
+                <MobileMenu />
+              </HeaderStylesMob>
+            ) : (
+              <>
+                <UserNav />
+                <UserBar />
+                <LogOut />
+              </>
+            )}
+          </>
+        )}
+      </HeaderStyles>
     </Container>
   );
 };

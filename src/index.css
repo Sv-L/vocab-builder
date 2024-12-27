@@ -1,20 +1,28 @@
 @font-face {
-  font-family: "MacPawFixelDisplay";
-  src: url("/src/fonts/fonts/MacPawFixelDisplay-Bold.otf") format("otf"),
-    url("/src/fonts/fonts/MacPawFixelDisplay-ExtraBold.otf") format("otf"),
-    url("/src/fonts/fonts/MacPawFixelDisplay-Light.otf") format("otf"),
-    url("/src/fonts/fonts/MacPawFixelDisplay-Medium.otf") format("otf"),
-    url("/src/fonts/fonts/MacPawFixelDisplay-Regular.otf") format("otf"),
-    url("/src/fonts/fonts/MacPawFixelDisplay-SemiBold.otf") format("otf"),
-    url("/src/fonts/fonts/MacPawFixelDisplay-Thin.otf") format("otf");
+  font-family: 'MacPawFixelDisplay';
+  src: url('/src/fonts/fonts/MacPawFixelDisplay-Bold.otf') format('otf'),
+    url('/src/fonts/fonts/MacPawFixelDisplay-ExtraBold.otf') format('otf'),
+    url('/src/fonts/fonts/MacPawFixelDisplay-Light.otf') format('otf'),
+    url('/src/fonts/fonts/MacPawFixelDisplay-Medium.otf') format('otf'),
+    url('/src/fonts/fonts/MacPawFixelDisplay-Regular.otf') format('otf'),
+    url('/src/fonts/fonts/MacPawFixelDisplay-SemiBold.otf') format('otf'),
+    url('/src/fonts/fonts/MacPawFixelDisplay-Thin.otf') format('otf');
+}
+
+:root {
+  --text-color-dark: #121417;
+  --text-color-light: #fcfcfc;
+  --primary-color: #85aa9f;
+  --secondary-color: rgba(133, 170, 159, 0.1);
+  --background-light: #fff;
+  --backdrop: rgba(18, 20, 23, 0.2);
+  --light: #f8f8f8;
 }
 
 body {
   box-sizing: border-box;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'MacPawFixelDisplay', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -34,7 +42,16 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }

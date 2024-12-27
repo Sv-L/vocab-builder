@@ -1,7 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-export const LogoStyles = styled.div`
+export const HeaderStyles = styled.div`
+  padding: 16px;
   display: flex;
-  gap: 16px;
   align-items: center;
+`;
+
+export const HeaderStylesMob = styled.div`
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 `;
